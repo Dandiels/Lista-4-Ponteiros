@@ -10,7 +10,7 @@ int main()
     
     int x[TAM*2], y[TAM*2], m[TAM][TAM] = {0};
 
-    puts("Vetor gerado:\n");
+    puts("\nVetores gerados:\n");
 
     for (int i = 0; i < TAM * 2; i++)
     {
@@ -26,13 +26,16 @@ int main()
         m[y[j]][x[j]]++;
     }
 
-    puts("Vetor de ocorrências dos pares de X e Y:\n");
+    puts("Vetor de coocorrências dos elementos de X e Y:\n");
 
-    for (int k = 0; k < TAM; k++)
+    for (int i = 0; i < TAM; i++)
     {
-        for (int i = 0; i < TAM; i++)
+        for (int j = 0; j < TAM; j++)
         {
-            printf("Ocorrências do par (%d, %d): %d.\n", k, i, m[k][i]);
+            printf("%d\t", m[i][j]);
+
+            if (!((j + 1) % TAM))
+                printf("\n\n");
         }
     }
     
